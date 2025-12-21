@@ -1,0 +1,288 @@
+/* --- 1. IMPORTAZIONE FONT --- */
+/* Playfair Display per i titoli (elegante) e Lato per i testi (pulito) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+/* --- 2. VARIABILI E RESET --- */
+:root {
+    --primary: #d7dfb6;    /* Verde salvia chiaro */
+    --dark: #5d6d4e;       /* Verde bosco scuro */
+    --accent: #b8a38a;     /* Talpa/Oro opaco */
+    --bg-light: #fefcfb;   /* Bianco crema */
+    --text: #333333;
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.8;
+    color: var(--text);
+    background-color: var(--bg-light);
+    scroll-behavior: smooth;
+}
+
+/* --- 3. HEADER & NAV --- */
+header {
+    padding: 60px 20px 20px;
+    text-align: center;
+}
+
+.title {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+nav {
+    background: white;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* --- 4. HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.hero .videos {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 25px 25px 0px var(--primary); /* Dettaglio decorativo moderno */
+    transition: var(--transition);
+    opacity: 80%;
+}
+
+/* --- 5. CATEGORIE & DIVISORI --- */
+.divisor {
+    height: 1px;
+    background: radial-gradient(circle, var(--accent) 0%, rgba(255,255,255,0) 80%);
+    margin: 60px auto;
+    width: 50%;
+}
+
+.categorie {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.categorie h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.categorie ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categorie a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.categorie li {
+    padding: 12px 30px;
+    border: 1px solid var(--primary);
+    border-radius: 30px;
+    background: white;
+    transition: var(--transition);
+}
+
+.categorie li:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* --- 6. PRODOTTI (LAYOUT ALTERNATO) --- */
+.prodotti {
+    max-width: 1100px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+#forme, #bicchieri, #riciclo {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+/* Inverte l'ordine per la sezione centrale */
+#bicchieri {
+    flex-direction: row-reverse;
+}
+
+.prodotti section {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    background-color: var(--primary);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.prodotti section img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.prodotti section img:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.prodotti p {
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- 7. CHI SONO (ABOUT) --- */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 8px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- 8. FOOTER --- */
+footer {
+    background-color: #f9f9f9;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+#socials h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 30px 0 20px;
+}
+
+#socials ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+#socials img {
+    width: 35px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+#socials img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* --- 9. RESPONSIVE --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    
+    .hero, #forme, #bicchieri, #riciclo {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero img {
+        max-width: 100%;
+        box-shadow: 15px 15px 0px var(--primary);
+    }
+
+    nav ul { gap: 15px; }
+    
+    .prodotti p { text-align: center; }
+
+    .categorie ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
